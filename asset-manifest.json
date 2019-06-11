@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/click-just-once/static/css/main.158d7667.chunk.css",
-    "main.js": "/click-just-once/static/js/main.894221a0.chunk.js",
-    "main.js.map": "/click-just-once/static/js/main.894221a0.chunk.js.map",
+    "main.css": "/click-just-once/static/css/main.7cac4183.chunk.css",
+    "main.js": "/click-just-once/static/js/main.5402bd95.chunk.js",
+    "main.js.map": "/click-just-once/static/js/main.5402bd95.chunk.js.map",
     "runtime~main.js": "/click-just-once/static/js/runtime~main.c0bf5d4f.js",
     "runtime~main.js.map": "/click-just-once/static/js/runtime~main.c0bf5d4f.js.map",
     "static/js/2.884c28c3.chunk.js": "/click-just-once/static/js/2.884c28c3.chunk.js",
     "static/js/2.884c28c3.chunk.js.map": "/click-just-once/static/js/2.884c28c3.chunk.js.map",
     "index.html": "/click-just-once/index.html",
-    "precache-manifest.77b06e8d78c219805dbdd0fb3fb63b6d.js": "/click-just-once/precache-manifest.77b06e8d78c219805dbdd0fb3fb63b6d.js",
+    "precache-manifest.ef9271a98ec4e700716988812a4b64bf.js": "/click-just-once/precache-manifest.ef9271a98ec4e700716988812a4b64bf.js",
     "service-worker.js": "/click-just-once/service-worker.js",
-    "static/css/main.158d7667.chunk.css.map": "/click-just-once/static/css/main.158d7667.chunk.css.map"
+    "static/css/main.7cac4183.chunk.css.map": "/click-just-once/static/css/main.7cac4183.chunk.css.map",
+    "static/media/index.css": "/click-just-once/static/media/subtle_orange_emboss_@2X.144f16f6.png"
   }
 }
