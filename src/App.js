@@ -1,26 +1,79 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Container from "./components/Container";
+import Navbar from "./components/Navbar";
+import Card from "./components/Card";
+import cards from "./cards.json";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const shuffle = array => {
+  array.sort(() => Math.random() - 0.5);
+};
+
+shuffle(cards);
+
+class App extends Component {
+  state = {
+    cards,
+    cardsToGo: cards.length,
+    wins: 0,
+    losses: 0,
+    info: "click each card just once"
+  };
+
+  clickedCards = [];
+
+  clickHandler = id => {
+    shuffle(cards);
+    let cardsToGo = this.state.cardsToGo;
+    let wins = this.state.wins;
+    let losses = this.state.losses;
+    let info = this.state.info;
+
+    cardsToGo--;
+
+    if (this.clickedCards.includes(id)) {
+      losses++;
+      cardsToGo = cards.length;
+      info = "YOU LOST! NEXT GAME...";
+      this.clickedCards = [];
+    } else {
+      this.clickedCards.push(id);
+    }
+
+    if (cardsToGo === 0) {
+      wins++;
+      cardsToGo = cards.length;
+      info = "YOU WON! NEXT GAME...";
+      this.clickedCards = [];
+    }
+
+    if (cardsToGo === cards.length - 1) {
+      info = "click each card just once";
+    }
+
+    this.setState({ cards, cardsToGo, wins, losses, info });
+  };
+
+  render() {
+    return (
+      <Container>
+        <Navbar
+          cardsToGo={this.state.cardsToGo}
+          wins={this.state.wins}
+          losses={this.state.losses}
+          info={this.state.info}
+        />
+        {this.state.cards.map(card => (
+          <Card
+            key={card.id}
+            id={card.id}
+            name={card.name}
+            image={card.image}
+            clickHandler={this.clickHandler}
+          />
+        ))}
+      </Container>
+    );
+  }
 }
 
 export default App;
